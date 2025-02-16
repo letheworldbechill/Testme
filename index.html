@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geheimer Messenger-Taschenrechner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Taschenrechner Container -->
+  <div id="calculator-container">
+    <div id="calculator">
+      <div id="display">0</div>
+      <div id="buttons">
+        <button class="btn" data-value="C">C</button>
+        <button class="btn" data-value="←">←</button>
+        <button class="btn" data-value="%">%</button>
+        <button class="btn operator" data-value="/">÷</button>
+        
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn operator" data-value="*">×</button>
+        
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn operator" data-value="-">−</button>
+        
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn operator" data-value="+">+</button>
+        
+        <button class="btn zero" data-value="0">0</button>
+        <button class="btn" data-value=".">.</button>
+        <button class="btn equals" data-value="=">=</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Messenger Container (zunächst versteckt) -->
+  <div id="messenger-container">
+    <!-- Bereich zur Einrichtung der Verschlüsselung -->
+    <div id="encryption-setup">
+      <label for="identCode">Identifikationscode:</label>
+      <input type="number" id="identCode" placeholder="z.B. 123456">
+      <button id="setKey">Schlüssel setzen</button>
+    </div>
+    <!-- Chat-Bereich -->
+    <div id="messenger">
+      <div id="chat-header">
+         <h2>Geheimer Messenger</h2>
+      </div>
+      <div id="chat-window">
+         <ul id="chat-messages"></ul>
+      </div>
+      <div id="chat-input">
+         <input type="text" id="message-input" placeholder="Nachricht eingeben...">
+         <button id="send-btn">Senden</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Socket.IO client library -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- CryptoJS Bibliothek zur Verschlüsselung (über CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <!-- Eigene Skriptdatei -->
+  <script src="script.js"></script>
+</body>
+</html>
